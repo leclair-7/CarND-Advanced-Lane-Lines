@@ -37,20 +37,24 @@ If you're feeling ambitious (again, totally optional though), don't stop there! 
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
 
 
-Camera Calibration
+1 Camera Calibration
 Computing the camera matrix and distortion coefficients (with example)
 
-To find the distortion coefficient, the number of rows and columns to find on the chessboard, six and nine were inputted in the open CV find chessboard corners function, this runs an edge detection algorithm, afterwords open Seabees calibrate camera uses all of the image points to create a distortion coefficient in matrix two
+To find the distortion coefficient, the number of rows and columns to find on the chessboard, six and nine were inputted in the open CV find chessboard corners function, this runs an edge detection algorithm, lastly, cv2.calibrateCamera camera uses all of the image points to create a distortion coefficient matrix.
 
-![alt text][image1]
-
-
-
+![Undistorted][image1]
+![Undistorted-also][image2]
 
 
-2
-And the code this can be found at box number 34. To find the parameters and explore functions to isolate the lane lines, I created a file that checks every combination of thresholds for each channel of the following color representations,: RGB, HSV, HLS, and so Sobel thresholds in the x and y directions. After trial and error, I ended up using the beat channel using the following: V channel HSV, HSV channel HLS, B of RGB, and read of RGB
-3 this can be found on box 14 of the events – Lane – finding file
-To fine to carry out the perspective, Points were found on the original image, these were found by trial and error to make a rectangle that would show abounding reason for where lane lines are most likely to appear, destination points of where this response would be on the new image, and a Matrix was calculated via the Seaview to don’t get perspective transform function, work perspective is called, and they are below image shows before and after.
+2 Color Transforms
+And the code this can be found at box number 34. To find the parameters and explore functions to isolate the lane lines, I created a file, Function and Parameter Testing.ipynb
+, that checks every combination of thresholds for each channel (increments of 10) of the following color representations,: RGB, HSV, HLS, and Sobel thresholds ('x' and 'y' direction). After trial and error, I ended up using following: V channel HSV, H channel HLS, B of RGB, and R of RGB.
+
+
+3 Perspective Transform
+This can be found on box 14 of the Advanced–Lane–Finding.ipynb file. To fine to carry out the perspective, points were found on the original image which would probably bound the lane (and not irrelevant parts of the image), we'll call these source points. Then destination points of where the source points would be on the new image were derived, and cv2.getPerspectiveTransform is called, and the below images show before and after.
+
+
+
 This can be found in box 34 of the advanced nine finding code. The following is the method used to find the mainline pixels and fit their positions with a polynomial. First the binary threshold warped perspective transformed image was taken in the bottom half of the image in a histogram was made of the bottom half of the image, The number of windows was chosen, all the non-zero points of the each window were obtained. For each window the number of indices was obtained, and is it exceeded a threshold then the average horizontal axis index was obtained to put a new window. After the sleep was finished, hey Paul if it was a team with a number five function
 To find the radius of curvature I passed the same point values that were used to create the original Polly fit, then I multiply each point used in the poly fit by scaling number, which indicates the number of meters per pixel on each axis. Then I obtain the curve radio by the formula then I obtained the radius of curvature for the left and the right by using the formula present it in the lectures.
