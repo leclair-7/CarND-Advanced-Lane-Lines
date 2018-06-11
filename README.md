@@ -27,9 +27,6 @@ The goals / steps of this project are the following:
 
 
 
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing .
-
 
 #### 1 Camera Calibration
 ###### Computing the camera matrix and distortion coefficients (with example)
@@ -66,4 +63,4 @@ Below is a sample image of the outputted image, the rectified image was warped b
 
 ![Pipeline output][image6]
 ##### Output video
-[this free course](https://www.udacity.com/course/writing-readmes--ud777)
+[Results](https://github.com/leclair-7/CarND-Advanced-Lane-Lines/blob/master/results.mp4)
