@@ -2,15 +2,14 @@
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 
-In this project, your goal is to write a software pipeline to identify the lane boundaries in a video, but the main output or product we want you to create is a detailed writeup of the project.  Check out the [writeup template](https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup.  
+[//]: # (Image References)
 
-Creating a great writeup:
----
-A great writeup should include the rubric points as well as your description of how you addressed each point.  You should include a detailed description of the code used in each step (with line-number references and code snippets where necessary), and links to other supporting documents or external references.  You should include images in your writeup to demonstrate how your code works with examples.  
-
-All that said, please be concise!  We're not looking for you to write a book here, just a brief description of how you passed each rubric point, and references to the relevant code :). 
-
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup.
+[image1]: ./output_images/original-undistorted.png "Undistorted"
+[image2]: ./output_images/road-original-undistorted.png "Undistorted Road"
+[image3]: ./output_images/threshold-binary.png "Threshold Binary"
+[image4]: ./output_images/region-to-transform.png "Region"
+[image5]: ./output_images/transformed-image.png "Transformed Mask"
+[image6]: ./output_images/brightness-original.png "Brightness Changed"
 
 The Project
 ---
@@ -28,7 +27,7 @@ The goals / steps of this project are the following:
 
 The images for camera calibration are stored in the folder called `camera_cal`.  The images in `test_images` are for testing your pipeline on single frames.  If you want to extract more test images from the videos, you can simply use an image writing method like `cv2.imwrite()`, i.e., you can read the video in frame by frame as usual, and for frames you want to save for later you can write to an image file.  
 
-To help the reviewer examine your work, please save examples of the output from each stage of your pipeline in the folder called `output_images`, and include a description in your writeup for the project of what each image shows.    The video called `project_video.mp4` is the video your pipeline should work well on.  
+To help the reviewer examine your work, please save examples of the output from each stage of your pipeline in the folder called `output_images`, and include a description in your writeup for the project of what each image shows. The video called `project_video.mp4` is the video your pipeline should work well on.  
 
 The `challenge_video.mp4` video is an extra (and optional) challenge for you if you want to test your pipeline under somewhat trickier conditions.  The `harder_challenge.mp4` video is another optional challenge and is brutal!
 
@@ -37,3 +36,21 @@ If you're feeling ambitious (again, totally optional though), don't stop there! 
 ## How to write a README
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
 
+
+Camera Calibration
+Computing the camera matrix and distortion coefficients (with example)
+
+To find the distortion coefficient, the number of rows and columns to find on the chessboard, six and nine were inputted in the open CV find chessboard corners function, this runs an edge detection algorithm, afterwords open Seabees calibrate camera uses all of the image points to create a distortion coefficient in matrix two
+
+![alt text][image1]
+
+
+
+
+
+2
+And the code this can be found at box number 34. To find the parameters and explore functions to isolate the lane lines, I created a file that checks every combination of thresholds for each channel of the following color representations,: RGB, HSV, HLS, and so Sobel thresholds in the x and y directions. After trial and error, I ended up using the beat channel using the following: V channel HSV, HSV channel HLS, B of RGB, and read of RGB
+3 this can be found on box 14 of the events – Lane – finding file
+To fine to carry out the perspective, Points were found on the original image, these were found by trial and error to make a rectangle that would show abounding reason for where lane lines are most likely to appear, destination points of where this response would be on the new image, and a Matrix was calculated via the Seaview to don’t get perspective transform function, work perspective is called, and they are below image shows before and after.
+This can be found in box 34 of the advanced nine finding code. The following is the method used to find the mainline pixels and fit their positions with a polynomial. First the binary threshold warped perspective transformed image was taken in the bottom half of the image in a histogram was made of the bottom half of the image, The number of windows was chosen, all the non-zero points of the each window were obtained. For each window the number of indices was obtained, and is it exceeded a threshold then the average horizontal axis index was obtained to put a new window. After the sleep was finished, hey Paul if it was a team with a number five function
+To find the radius of curvature I passed the same point values that were used to create the original Polly fit, then I multiply each point used in the poly fit by scaling number, which indicates the number of meters per pixel on each axis. Then I obtain the curve radio by the formula then I obtained the radius of curvature for the left and the right by using the formula present it in the lectures.
