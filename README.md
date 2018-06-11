@@ -4,12 +4,12 @@
 
 [//]: # (Image References)
 
-[image1]: ./output_images/original-undistorted.png "Undistorted"
-[image2]: ./output_images/road-original-undistorted.png "Undistorted Road"
-[image3]: ./output_images/threshold-binary.png "Threshold Binary"
-[image4]: ./output_images/region-to-transform.png "Region"
-[image5]: ./output_images/transformed-image.png "Transformed Mask"
-[image6]: ./output_images/brightness-original.png "Brightness Changed"
+[image1]: ./output-images/original-undistorted.png "Undistorted"
+[image2]: ./output-images/road-original-undistorted.png "Undistorted Road"
+[image3]: ./output-images/threshold-binary.png "Threshold Binary"
+[image4]: ./output-images/region-to-transform.png "Region"
+[image5]: ./output-images/transformed-image.png "Transformed Mask"
+[image6]: ./output-images/brightness-original.png "Brightness Changed"
 
 The Project
 ---
