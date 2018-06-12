@@ -64,3 +64,7 @@ Below is a sample image of the outputted image, the rectified image was warped b
 ![Pipeline output][image6]
 ##### Output video
 [Results](https://github.com/leclair-7/CarND-Advanced-Lane-Lines/blob/master/results.mp4)
+
+
+#### 7 Discussion - Problems Faced and Improvements to Be Made
+Two important challenges: 1- figuring out the combination of thresholds. I began using sobel-x and then a combination of the direction threshold and magnitude threshold. These were confusing. I then made a file that prints all possible thresholds in increments of 10 which led me to finding the parameters used. I think if only 1 lane line showed, then the pipeline would fail. I also think that a different coloration of the road may present issues on highlighting the lane region. To improve this I think the LaneWatcher class can be tested and refactored to give up and start over after a certain number of missclassifications. Also simplifying the binary thresholding would make the image processing more resilient to poor conditions.
