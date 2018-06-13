@@ -1,6 +1,10 @@
+import numpy as np
+from sympy import *
 
-
-
+'''
+This module is the radius of curvature in code
+it also uses sympy which is cool
+'''
 
 def radiusOfCurvature(point):
 	'''
@@ -22,17 +26,6 @@ def getCenterPoint(point):
 	m2 = -1. / y_prime
 
 
-'''
-print(radiusOfCurvature(1))
-
-a = lambda x: -1* x / 5 + 21./5
-print(a(-9.83))
-
-print(a(11.84))
-'''
-
-from sympy import *
-import numpy as np
 x = Symbol('x')
 y = 2 * x**3 - x + 3
 y_prime = diff(y,x)
