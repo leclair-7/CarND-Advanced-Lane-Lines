@@ -56,7 +56,7 @@ This can be found in box 12 of Advanced–Lane–Finding.ipynb. The following is
 
 #### 5 Radius of Curvature
 
-To find the radius of curvature I passed the same point values that were used to create the original polyfit, then each point used in the polyfit was scaled (meter/pixel), which indicates the number of meters per pixel on each axis. Then I obtained the curve radius (average of left and right). The offset from center was obtained by calculating the midpoint of the image, and the mid point of the left and right curves from the polyfit. Then we subtracted center_of_lane - midpoint of image and scaled it.
+To find the radius of curvature I passed the same point values that were used to create the original polyfit, then each point used in the polyfit was scaled (meter/pixel), which indicates the number of meters per pixel on each axis. Then I obtained the curve radius (average of left and right). The offset from center was obtained by calculating the midpoint of the image, and the mid point of the left and right curves from the polyfit. Then we subtracted center_of_lane - midpoint of image and scaled it. This can be found on box 12 in the "fitted_curve_to_mask_on_screen" function towards.
 
 #### 6 Result
 Below is a sample image of the outputted image, the rectified image was warped back on the screen.
@@ -67,4 +67,10 @@ Below is a sample image of the outputted image, the rectified image was warped b
 
 
 #### 7 Discussion - Problems Faced and Improvements to Be Made
-Two important challenges: 1- figuring out the combination of thresholds. 2- Making the pipeline handle bad (or error) classifications. For image processing I began using sobel-x and then a combination of the direction threshold and magnitude threshold. These were confusing. I then made a file that prints all possible thresholds in increments of 10 which led me to finding the parameters used. I think if only 1 lane line showed, then the pipeline would fail. I also think that a different coloration of the road may present issues on highlighting the lane region. To improve this I think the LaneWatcher class can be tested and refactored to give up and start over after a certain number of missclassifications. Also simplifying the binary thresholding would make the image processing more resilient to poor conditions.
+Two important challenges: 1- figuring out the combination of thresholds. 2- Making the pipeline handle bad (or error) classifications. For image processing I began using sobel-x and then a combination of the direction threshold and magnitude threshold. These were confusing. I then created a jupyter notebook, "Function and Parameter Testing.ipynb", which prints all possible thresholds in increments of 10 which led me to finding the parameters used. To handle bad classifications I created a handler class LaneWatcher (box 12) which uses the previous good lane detection when an outlier is detected or is a misclassification occurred.
+
+##### Problems with the pipeline:
+I think if only 1 lane line showed, then the pipeline would fail. I also think that a different coloration of the road may present issues on highlighting the lane region.
+
+##### Improvements
+To improve this I think the LaneWatcher class can be tested and refactored to give up and start over after a certain number of missclassifications. Also simplifying the binary thresholding would make the image processing more resilient to poor conditions since it may give too much information.
