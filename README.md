@@ -1,4 +1,7 @@
 ## Advanced Lane Finding
+
+A project in the Udacity Self Driving Car Engineer Nanodegree. This is a less schoolish version of the project writeup that was submitted for grading.
+
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 
@@ -11,10 +14,10 @@
 [image5]: ./output-images/Lines.png "Transformed Mask"
 [image6]: ./output-images/result.png "Brightness Changed"
 
-The Project
+
 ---
 
-The goals / steps of this project are the following:
+### Goals / Steps:
 
 * Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
 * Apply a distortion correction to raw images.
@@ -25,8 +28,15 @@ The goals / steps of this project are the following:
 * Warp the detected lane boundaries back onto the original image.
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
+### Dependencies
+Found in the requirements.txt file
 
-
+### Build Instructions
+1 python -m venv laneline_envinstall</br>
+2 source laneline_envinstall/bin/activate
+2 pip install -r requirements.txt
+3 Start jupyter notebook in the repo directory
+4 In Juyter notebooks: Restart and Run All
 
 #### 1 Camera Calibration
 ###### Computing the camera matrix and distortion coefficients (with example)
