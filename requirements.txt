@@ -1,0 +1,10 @@
+numpy==1.13.3
+matplotlib==2.1.0
+opencv-python==3.4.1.15
+moviepy==0.2.3.4
+ipython==6.1.0
+jupyter-client==5.1.0
+jupyter-console==5.2.0
+jupyter-core==4.3.0
+jupyterlab==0.27.0
+jupyterlab-launcher==0.4.0
